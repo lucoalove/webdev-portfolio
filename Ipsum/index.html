@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>kitsumitsu.de</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+
+        <style>
+            #bio-holder {
+                width: 100%;
+                max-width: 300px;
+                height: 100vh;
+                margin: auto;
+                position: relative;
+            }
+
+            #bio-holder div {
+                text-align: center;
+                width: 100%;
+                height: 600px;
+                position: absolute;
+                top: calc(50% - 250px);
+            }
+            
+            #footer {
+                height: 240px;
+                font-size: 0.8rem;
+                font-weight: 700;
+                padding: 6px;
+                color: var(--background);
+            }
+
+            #footer td, #footer th, #footer a {
+                border: none;
+                color: var(--background);
+                text-align: left;
+                padding-right: 1em;
+            }
+            
+            #footer td {
+                font-weight: 400;
+            }
+
+            .click-header {
+                margin-bottom: 10px;
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--background);
+                background: var(--accent);
+                transition-duration: 0.3s;
+                transition-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+            }
+
+            .click-header div {
+                cursor: pointer;
+                transition: inherit;
+            }
+
+            .click-header:nth-child(odd) {
+                border-left: 4px solid var(--background);
+            }
+
+            .click-header:nth-child(odd) * {
+                padding-left: 6px;
+            }
+
+            .click-header:nth-child(even) {
+                text-align: right;
+                border-right: 4px solid var(--background);
+            }
+
+            .click-header:nth-child(even) * {
+                padding-right: 6px;
+            }
+
+            .click-header a {
+                color: var(--background);
+                display: block;
+                font-size: 1rem;
+                transition: inherit;
+                text-decoration: none;
+            }
+
+            .click-header div:hover, .click-header a:hover {
+                color: var(--accent);
+                background: var(--background);
+            }
+
+            #content-holder {
+                background: var(--accent);
+            }
+
+            #content {
+                max-width: 750px;
+                margin: auto;
+            }
+
+            /* mobile/portrait orientation */
+            @media screen and (orientation : portrait) {
+                #bio-holder {
+                    max-width: 50%;
+                    font-size: 3vw; /* temp */
+                }
+
+                #bio-holder div {
+                    top: calc(50% - 60vw);
+                }
+
+                #content {
+                    max-width: 90%;
+                }
+            }
+        </style>
+        
+        <script>
+            function scroll() {
+                document.getElementById("content-holder").style.paddingTop = window.scrollY + "px";
+                document.getElementById("content-holder").style.marginTop = -window.scrollY + "px";
+
+                document.getElementById("bio-holder").style.opacity= 1 - window.scrollY / 200;
+            }
+        </script>
+    </head>
+    <body onscroll="scroll();">
+
+        <div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 750px; color: var(--background); font-size: 24px; font-weight: 700; text-align: center;">
+            ipsum
+        </div>
+        
+        <!-- bio section -->
+        <div id="bio-holder">
+            <div>
+                <h1 style="margin: 6px 0; font-size: 24px;">lorem <span style="color: var(--accent);">ipsum</span></h1>
+                <h1 style="margin: -6px 0 10px; font-size: 18px;">dolor sit amet</h1>
+                <img src="https://clubrunner.blob.core.windows.net/00000000127/Images/misc.png" width="100%">
+                <br>
+                <i>Scroll down!</i>
+            </div>
+        </div>
+
+        <div id="content-holder">
+            <div id="content">
+
+                <!--
+                    I'll probably change this section to have a bento layout with info or something instead of links but I don't feel like cleaning this up rn
+                    also separate the CSS good lord
+                -->
+
+                <div class="click-header">
+                    <div>Maecenas</div>
+                </div>
+
+                <div class="click-header">
+                    <div>Pulvinar Et</div>
+                </div>
+
+                <div class="click-header">
+                    <div>Purus</div>
+                </div>
+
+                <div class="click-header">
+                    <div>Ullamcorper</div>
+                </div>
+
+                <div class="click-header">
+                    <div>Tristique</div>
+                </div>
+
+                <div style="height: 20vh;"></div>
+        
+                <div id="footer">
+                    <h1>ipsum</h1>
+                    <hr>
+                    © 20XX ipsum. All Rights Reserved.<br><br>
+
+                    <table>
+                        <tr>
+                            <th>Contact</th>
+                            <th>Legal</th>
+                        </tr>
+                        <tr>
+                            <td><a href="">Aliquam</a></td>
+                            <td><a href="">Ut Risus</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">Maximus</a></td>
+                            <td><a href="">Rhoncus</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">Pulvinar</a></td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+
+    </body>
+</html>
